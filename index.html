@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Family Feud System</title>
+    </head>
+    <body>
+        <div class="row-1">
+            <div class="point-counter">00</div>
+            <h1>TRICK OR TRIVIA</h1>
+            <div class="point-counter">00</div>
+        </div>
+        <div class="row-2">
+            <div class="answers">
+                <div class="answer hidden">
+                    <div class="answer-front">
+                        <h2>1</h2>
+                    </div>
+                    <div class="answer-back">
+                        <div class="answer-text">Answer 1</div>
+                        <div class="gap"></div>
+                        <div class="answer-points">00</div>
+                    </div>
+                </div>
+                <div class="answer hidden">
+                    <div class="answer-front">
+                        <h2>2</h2>
+                    </div>
+                    <div class="answer-back">
+                        <div class="answer-text">Answer 2</div>
+                        <div class="gap"></div>
+                        <div class="answer-points">00</div>
+                    </div>
+                </div>
+                <div class="answer hidden">
+                    <div class="answer-front">
+                        <h2>3</h2>
+                    </div>
+                    <div class="answer-back">
+                        <div class="answer-text">Answer 3</div>
+                        <div class="gap"></div>
+                        <div class="answer-points">00</div>
+                    </div>
+                </div>
+                <div class="answer hidden">
+                    <div class="answer-front">
+                        <h2>4</h2>
+                    </div>
+                    <div class="answer-back">
+                        <div class="answer-text">Answer 4</div>
+                        <div class="gap"></div>
+                        <div class="answer-points">00</div>
+                    </div>
+                </div>
+                <div class="answer hidden">
+                    <div class="answer-front">
+                        <h2>5</h2>
+                    </div>
+                    <div class="answer-back">
+                        <div class="answer-text">Answer 5</div>
+                        <div class="gap"></div>
+                        <div class="answer-points">00</div>
+                    </div>
+                </div>
+                <div class="answer hidden">
+                    <div class="answer-front">
+                        <h2>6</h2>
+                    </div>
+                    <div class="answer-back">
+                        <div class="answer-text">Answer 6</div>
+                        <div class="gap"></div>
+                        <div class="answer-points">00</div>
+                    </div>
+                </div>
+                <div class="answer hidden">
+                    <div class="answer-front">
+                        <h2>7</h2>
+                    </div>
+                    <div class="answer-back">
+                        <div class="answer-text">Answer 7</div>
+                        <div class="gap"></div>
+                        <div class="answer-points">00</div>
+                    </div>
+                </div>
+                <div class="answer hidden">
+                    <div class="answer-front">
+                        <h2>8</h2>
+                    </div>
+                    <div class="answer-back">
+                        <div class="answer-text">Answer 8</div>
+                        <div class="gap"></div>
+                        <div class="answer-points">00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="strike overlay hidden">
+            <img class="hidden" src="assets/family_feud_strike.png" />
+            <img class="hidden" src="assets/family_feud_strike.png" />
+            <img class="hidden" src="assets/family_feud_strike.png" />
+        </div>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins&display=swap");
+            @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fuzzy+Bubbles&family=Josefin+Sans:wght@300;400;500&display=swap");
+
+            /* Theme Colours:
+                Dark Blue: #517EA6
+                Light Blue: #A0DBF2
+                Yellow: #F2E641
+                Red: #F25244
+                Brown/Black: #261212
+            */
+            :root {
+                --text-color: hwb(14deg 91% 0%);
+                --glow: 0 0 20px #fd6322, 0 0 20px rgb(242 144 65 / 77%);
+            }
+            body {
+                margin: 0;
+                height: 100vh;
+                background: linear-gradient(
+                        to bottom,
+                        rgba(0, 0, 0, 0.4),
+                        rgba(0, 0, 0, 0.4)
+                    ),
+                    url("./assets/552086.jpg") no-repeat center center fixed;
+                background-size: cover;
+                display: flex;
+                flex-direction: column;
+
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+                overflow: hidden;
+            }
+            body::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                /* background: rgba(0, 0, 0, 0.2);
+                backdrop-filter: blur(1px); */
+                z-index: -1;
+                border-radius: 40px;
+            }
+            h1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 8vh;
+                margin: 0;
+                height: 13vh;
+                line-height: 2;
+                left: 50vw;
+                transform: translateX(-50%);
+                color: var(--text-color);
+                text-shadow: var(--glow);
+                font-size: 4vw;
+                text-align: center;
+                font-family: CFHalloween;
+                font-weight: lighter;
+            }
+            @font-face {
+                /* Source: https://www.dafont.com/cf-halloween.font */
+                font-family: "CFHalloween";
+                src: url("./assets/CFHalloween-Regular.ttf");
+            }
+            .row-1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2vw 5vw;
+                padding-top: 8vh;
+                height: 13vh;
+            }
+            .row-2 {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .point-counter {
+                color: var(--text-color);
+                text-shadow: var(--glow);
+                font-size: 4vw;
+                text-align: center;
+                font-family: CFHalloween;
+                font-weight: lighter;
+            }
+            .answers {
+                display: flex;
+                flex-direction: column;
+                height: 70vh;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 4vh;
+                width: 800px;
+            }
+            .answers .answer {
+                position: relative;
+                height: 13vh;
+                width: 45%;
+                transition: all 0.5s ease;
+                transform-origin: center;
+                transform-style: preserve-3d;
+                transition: all 0.5s ease;
+                perspective: 1000px;
+            }
+            .answers .answer.hidden {
+                opacity: 0;
+            }
+            .answers .answer > * {
+                position: absolute;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                height: 13vh;
+                width: 100%;
+                box-sizing: border-box;
+                transform-origin: center;
+                perspective: 1000px;
+
+                background: rgba(0, 0, 0, 0.4);
+                border-radius: 16px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(0, 0, 0, 0.6);
+                /* From https://css */
+            }
+            .answers .answer .answer-front {
+                transform: rotateX(0deg);
+                z-index: 2;
+            }
+            .answers .answer .answer-back {
+                transform: rotateX(180deg);
+                z-index: 1;
+                opacity: 0;
+            }
+            .answers .answer.flipped {
+                transform: rotateX(180deg);
+            }
+            .answers .answer.flipped .answer-front {
+                opacity: 0;
+            }
+            .answers .answer .answer-front {
+                display: flex;
+                justify-content: center;
+            }
+            .answers .answer .answer-front h2 {
+                color: var(--text-color);
+                text-shadow: var(--glow);
+                font-family: CFHalloween;
+                border: 3px solid var(--text-color);
+                border-radius: 50%;
+                width: 1em;
+                height: 1em;
+                padding: 8px;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 2rem;
+            }
+            .answers .answer.flipped .answer-back {
+                opacity: 1;
+            }
+            .answers .answer .answer-back {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                color: #fafafa;
+                font-family: "Bebas Neue";
+                font-size: 2rem;
+            }
+            .answers .answer .answer-back .answer-text {
+                flex-grow: 1;
+                padding: 2vh 2vw;
+            }
+            .answers .answer .answer-back .answer-points {
+                padding: 0 0.1ch;
+                margin: 0 20px;
+                /* margin-right: 20px; */
+            }
+            .answers .answer .answer-back .gap {
+                padding-right: 1px;
+                max-width: 1px;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                flex-grow: 1;
+            }
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                background: rgba(0, 0, 0, 0.5);
+                align-items: center;
+                justify-content: center;
+                transition: opacity 0.5s ease;
+            }
+            .overlay.hidden {
+                opacity: 0;
+            }
+            .strike img {
+                width: 30vw;
+                height: 30vw;
+            }
+            .strike {
+                gap: 3vw;
+            }
+            .strike img.hidden {
+                display: none;
+            }
+        </style>
+        <script>
+            function showStrikes(n) {
+                const strike = document.querySelector(".strike");
+                for (let i = 0; i < 3; i++) {
+                    if (i < n) {
+                        strike.children[i].classList.remove("hidden");
+                    } else {
+                        strike.children[i].classList.add("hidden");
+                    }
+                }
+                strike.classList.remove("hidden");
+                if (window.clearStrikeTimeout) {
+                    clearTimeout(window.clearStrikeTimeout);
+                }
+                window.clearStrikeTimeout = setTimeout(() => {
+                    strike.classList.add("hidden");
+                    window.clearStrikeTimeout = null;
+                }, 2000);
+            }
+            function setPoints(a, b) {
+                a = a.toString().padStart(2, "0");
+                b = b.toString().padStart(2, "0");
+                document.querySelectorAll(".point-counter")[0].innerText = a;
+                document.querySelectorAll(".point-counter")[1].innerText = b;
+            }
+            function flipCard(n, status) {
+                const card = document.querySelectorAll(".answer")[n - 1];
+                if (status) {
+                    card.classList.add("flipped");
+                } else {
+                    card.classList.remove("flipped");
+                }
+            }
+
+            const socket = new WebSocket(
+                "ws://" + window.location.host + "/ws"
+            );
+            socket.onmessage = function (event) {
+                const data = JSON.parse(event.data);
+                if (data.type === "points") {
+                    setPoints(data.points.a, data.points.b);
+                } else if (data.type === "flip") {
+                    flipCard(data.n, data.status);
+                } else if (data.type === "event") {
+                    if (data.event === "strike-1") {
+                        showStrikes(1);
+                    } else if (data.event === "strike-2") {
+                        showStrikes(2);
+                    } else if (data.event === "strike-3") {
+                        showStrikes(3);
+                    }
+                } else if (data.type === "question") {
+                    document.querySelectorAll(".answer").forEach((card) => {
+                        card.classList.remove("flipped");
+                    });
+                    document
+                        .querySelectorAll(".answer .answer-text")
+                        .forEach((el, i) => {
+                            if (data.question.answers.length <= i) {
+                                el.parentElement.parentElement.classList.add(
+                                    "hidden"
+                                );
+                                return;
+                            } else {
+                                el.parentElement.parentElement.classList.remove(
+                                    "hidden"
+                                );
+                            }
+                            el.innerText = data.question.answers[i][0];
+                            el.parentElement.querySelector(
+                                ".answer-points"
+                            ).innerText = data.question.answers[i][1];
+                        });
+                }
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Control Panel</title>
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                background: #000;
+                color: #0f0;
+                display: flex;
+                flex-direction: row;
+                gap: 2rem;
+                font-family: monospace;
+                padding: 4rem;
+                box-sizing: border-box;
+
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+            }
+            .spacer {
+                flex-grow: 1;
+            }
+            .widget {
+                display: flex;
+                flex-direction: column;
+                width: 10vw;
+                /* background: rgba(255, 255, 255, 0.1); */
+                padding: 1rem;
+                border-radius: 0.5rem;
+            }
+            .counter-widget .indicator {
+                font-size: 1rem;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+            .counter-widget .counter {
+                font-size: 5vw;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* background: rgba(255, 255, 255, 0.1); */
+                border-radius: 18px;
+            }
+            .counter-widget .options {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex: 1;
+                flex-direction: column;
+                font-size: 2rem;
+            }
+            .counter-widget .options > span {
+                margin: 0.4rem 0;
+                padding: 0.2rem 1rem;
+            }
+            .counter-widget .custom {
+                display: flex;
+            }
+            .counter-widget .custom input {
+                width: 2ch;
+                flex-grow: 1;
+            }
+            .buttons-widget {
+                gap: 1rem;
+            }
+            .question-set {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .question-indicator {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.2rem;
+            }
+            input {
+                width: 2ch;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                background: transparent;
+                margin: 0 0.5rem;
+                color: #0ff;
+                font-size: 1.2rem;
+                font-family: monospace;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+            }
+            input:focus {
+                color: #f00;
+                border-bottom: 1px solid white;
+            }
+            button,
+            .button {
+                cursor: pointer;
+                border: 0;
+                outline: 0;
+                background: transparent;
+                color: #ff0;
+                font-size: 1.2rem;
+                font-family: monospace;
+                padding: 0.2rem;
+                border: 1px solid rgba(255, 255, 255, 0.4);
+            }
+            button:hover,
+            .button:hover {
+                color: #f00;
+            }
+            .question-widget h1 {
+                font-size: 1.2rem;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                height: 4rem;
+                overflow: hidden;
+                margin-bottom: 2rem;
+            }
+            .answers {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                gap: 1rem;
+                flex-grow: 1;
+                height: 1px;
+            }
+            .answers .answer {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 45%;
+            }
+            .answers .answer input {
+                display: none;
+            }
+            .answers .answer label {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                height: 15vh;
+                overflow: hidden;
+                width: 100%;
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                border-radius: 0.5rem;
+                cursor: pointer;
+                font-size: 2vw;
+                padding: 2vw;
+                box-sizing: border-box;
+            }
+            .answers .answer input:checked ~ label {
+                background-color: rgba(255, 0, 0, 0.4);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="widget counter-widget" data-team="a">
+            <div class="indicator">Team 1</div>
+            <div class="counter">
+                <span>0</span>
+            </div>
+            <div class="options">
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+            </div>
+            <div class="spacer"></div>
+            <div class="custom">
+                <input type="text" placeholder="0" />
+                <button>+</button>
+            </div>
+        </div>
+        <div class="widget counter-widget" data-team="b">
+            <div class="indicator">Team 2</div>
+            <div class="counter">
+                <span>0</span>
+            </div>
+            <div class="options">
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+                <span class="button" data-value="10">+<span>10</span></span>
+            </div>
+            <div class="spacer"></div>
+            <div class="custom">
+                <input type="text" placeholder="0" />
+                <button>+</button>
+            </div>
+        </div>
+        <div class="widget buttons-widget">
+            <button data-event="strike-1">X</button>
+            <button data-event="strike-2">XX</button>
+            <button data-event="strike-3">XXX</button>
+            <button>Sound On</button>
+            <!-- Audio files -->
+            <!-- buzzer.mp3, correct.mp3, and wrong.mp3 -->
+            <span>Buzzer</span>
+            <audio controls>
+                <source src="assets/buzzer.mp3" type="audio/mpeg" />
+            </audio>
+            <span>Correct</span>
+            <audio controls>
+                <source src="assets/correct.mp3" type="audio/mpeg" />
+            </audio>
+            <span>Wrong</span>
+            <audio controls>
+                <source src="assets/wrong.mp3" type="audio/mpeg" />
+            </audio>
+            <!-- Audio styling -->
+            <style>
+                audio {
+                    width: 100%;
+                }
+            </style>
+            <div class="spacer"></div>
+            <div class="question-set">
+                <div class="question-indicator">
+                    <span>Q</span>
+                    <input type="text" />
+                    <span>/</span>
+                    <span>10</span>
+                    <div class="spacer"></div>
+                    <button>++</button>
+                </div>
+                <button>Set Q</button>
+            </div>
+        </div>
+        <div class="spacer question-widget widget">
+            <h1>
+                Q: Question.
+            </h1>
+            <div class="answers">
+                <div class="answer">
+                    <input type="checkbox" name="answer-1" id="answer-1" />
+                    <label for="answer-1">answer-1 (200)</label>
+                </div>
+                <div class="answer">
+                    <input type="checkbox" name="answer-2" id="answer-2" />
+                    <label for="answer-2">answer-2 (200)</label>
+                </div>
+                <div class="answer">
+                    <input type="checkbox" name="answer-3" id="answer-3" />
+                    <label for="answer-3">answer-3 (200)</label>
+                </div>
+                <div class="answer">
+                    <input type="checkbox" name="answer-4" id="answer-4" />
+                    <label for="answer-4">answer-4 (200)</label>
+                </div>
+                <div class="answer">
+                    <input type="checkbox" name="answer-5" id="answer-5" />
+                    <label for="answer-5">answer-5 (200)</label>
+                </div>
+                <div class="answer">
+                    <input type="checkbox" name="answer-6" id="answer-6" />
+                    <label for="answer-6">answer-6 (200)</label>
+                </div>
+                <div class="answer">
+                    <input type="checkbox" name="answer-7" id="answer-7" />
+                    <label for="answer-7">answer-7 (200)</label>
+                </div>
+                <div class="answer">
+                    <input type="checkbox" name="answer-8" id="answer-8" />
+                    <label for="answer-8">answer-8 (200)</label>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 0; right: 0; text-align: right">
+            <pre>
+                Tips:
+                - shift + click on point adding button to subtract points
+                - add negative number of points to subtract points
+                - click Set Q button to unflip all cards
+                </pre
+            >
+        </div>
+        <script>
+            const socket = new WebSocket(
+                "ws://" + window.location.host + "/ws"
+            );
+
+            socket.onopen = function (e) {
+                console.log("[open] Connection established");
+                console.log("Sending to server");
+            };
+
+            socket.onmessage = function (event) {
+                console.log(
+                    `[message] Data received from server: ${event.data}`
+                );
+            };
+
+            socket.onclose = function (event) {
+                if (event.wasClean) {
+                    document.write(
+                        `[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`
+                    );
+                } else {
+                    // e.g. server process killed or network down
+                    // event.code is usually 1006 in this case
+                    document.write("[close] Connection died");
+                }
+            };
+
+            socket.onerror = function (error) {
+                console.log(`[error]`);
+            };
+
+            const points = {
+                a: 0,
+                b: 0,
+            };
+
+            document
+                .querySelectorAll(".counter-widget .button")
+                .forEach((button) => {
+                    button.addEventListener("click", () => {
+                        points[
+                            button.closest(".counter-widget").dataset.team
+                        ] +=
+                            ((event.shiftKey && -1) || 1) *
+                            parseInt(button.dataset.value);
+                        updatePoints();
+                    });
+                });
+            document
+                .querySelectorAll(".counter-widget .custom button")
+                .forEach((button) => {
+                    button.addEventListener("click", () => {
+                        points[
+                            button.closest(".counter-widget").dataset.team
+                        ] += parseInt(button.previousElementSibling.value);
+                        button.previousElementSibling.value = "";
+                        updatePoints();
+                    });
+                });
+            document
+                .querySelectorAll(".counter-widget .custom input")
+                .forEach((input) => {
+                    input.addEventListener("keyup", (e) => {
+                        if (e.key === "Enter") {
+                            e.target.blur();
+                            points[
+                                input.closest(".counter-widget").dataset.team
+                            ] += parseInt(input.value);
+                            e.target.value = "";
+                            updatePoints();
+                        }
+                    });
+                });
+            document
+                .querySelectorAll(".buttons-widget button")
+                .forEach((button) => {
+                    button.addEventListener("click", () => {
+                        if (button.dataset.event) {
+                            socket.send(
+                                JSON.stringify({
+                                    type: "event",
+                                    event: button.dataset.event,
+                                })
+                            );
+                        }
+                    });
+                });
+            document
+                .querySelectorAll(".question-widget .answer input")
+                .forEach((input, i) => {
+                    input.addEventListener("change", () => {
+                        socket.send(
+                            JSON.stringify({
+                                type: "flip",
+                                n: i + 1,
+                                status: input.checked,
+                            })
+                        );
+                    });
+                });
+            function updatePoints() {
+                document
+                    .querySelectorAll(".counter-widget .counter span")
+                    .forEach((span, index) => {
+                        span.innerText = points[Object.keys(points)[index]];
+                    });
+                socket.send(
+                    JSON.stringify({
+                        type: "points",
+                        points,
+                    })
+                );
+            }
+
+            const questions = [
+                {
+                    question: "Name a Halloween prank.",
+                    answers: [
+                        ["Toilet papering houses/trees/yard", 51],
+                        ["Egging", 20],
+                        ["Soaping windows", 10],
+                        ["Smashing pumpkins", 07],
+                        ["Jumping out and scaring people", 07],
+                        ["Ringing doorbells and running away", 05],
+                    ],
+                },
+                {
+                    question: "Name a popular Halloween party decoration.",
+                    answers: [
+                        ["Pumpkin/Jack-O-Lantern", 36],
+                        ["Spiderwebs/Cobwebs", 20],
+                        ["Spiders", 14],
+                        ["Ghosts", 11],
+                        ["Skeletons", 10],
+                        ["Candles", 04],
+                    ],
+                },
+                {
+                    question:
+                        "Name something that makes a haunted house scary.",
+                    answers: [
+                        ["Scary music/noises", 40],
+                        ["Darkness", 17],
+                        ["Cobwebs/Spiderwebs", 15],
+                        ["Ghosts", 10],
+                        ["People/Things jumping out at you", 06],
+                        ["Strobe Lighting", 04],
+                    ],
+                },
+                {
+                    question: "Name a scary Halloween sound effect.",
+                    answers: [
+                        ["Screams", 38],
+                        ["Boo", 20],
+                        ["Creaking door", 17],
+                        ["Spooky laugh", 10],
+                        ["Moaning", 08],
+                        ["Howling", 07],
+                    ],
+                },
+                {
+                    question:
+                        "Name something people decorate their yards with at Halloween.",
+                    answers: [
+                        ["Gravestones/Tombstones", 38],
+                        ["Pumpkins", 31],
+                        ["Cobwebs/Spiderwebs", 12],
+                        ["Hay/Straw Bales", 05],
+                        ["Ghosts", 04],
+                        ["Lights", 04],
+                    ],
+                },
+                {
+                    question: "Name a scary Halloween character.",
+                    answers: [
+                        ["Freddie Krueger", 20],
+                        ["Frankenstein", 19],
+                        ["Jason (Friday the 13th)", 14],
+                        ["Vampire", 09],
+                        ["Dracula", 08],
+                        ["Grim Reaper", 07],
+                    ],
+                },
+                {
+                    question:
+                        "What other name is Halloween sometimes known as?",
+                    answers: [
+                        ["All Hallows Eve", 70],
+                        ["All Saints Day/Eve", 13],
+                        ["Trick or Treat Night", 07],
+                        ["Devil's Night", 05],
+                        ["Witches Night", 05],
+                    ],
+                },
+            ];
+            let currentQuestion = 0;
+
+            function updateQuestion(question) {
+                document.querySelector(".question-widget h1").innerText =
+                    question.question;
+                document.querySelector(
+                    ".question-indicator span:nth-of-type(3)"
+                ).innerText = questions.length;
+                document.querySelector(".question-indicator input").value =
+                    currentQuestion + 1;
+                document
+                    .querySelectorAll(".question-widget .answer label")
+                    .forEach((label, i) => {
+                        label.innerText =
+                            (question.answers[i] &&
+                                question.answers[i][0] +
+                                    " (" +
+                                    question.answers[i][1] +
+                                    ")") ||
+                            "undefined";
+                    });
+                document
+                    .querySelectorAll(".question-widget .answer input")
+                    .forEach((input, i) => {
+                        input.checked = false;
+                    });
+                document
+                    .querySelectorAll(".counter-widget .options")
+                    .forEach((options) => {
+                        options
+                            .querySelectorAll(".button")
+                            .forEach((button, i) => {
+                                button.dataset.value =
+                                    (question.answers[i] &&
+                                        question.answers[i][1]) ||
+                                    0;
+                                button.innerText =
+                                    (question.answers[i] &&
+                                        "+" +
+                                            question.answers[i][1]
+                                                .toString()
+                                                .padStart(2, "0")) ||
+                                    "-";
+                            });
+                    });
+                socket.send(
+                    JSON.stringify({
+                        type: "question",
+                        question,
+                    })
+                );
+            }
+
+            document
+                .querySelector(".question-indicator input")
+                .addEventListener("keyup", (e) => {
+                    if (e.key === "Enter") {
+                        currentQuestion = parseInt(e.target.value) - 1;
+                        e.target.blur();
+                        updateQuestion(questions[currentQuestion]);
+                    }
+                });
+            document
+                .querySelector(".question-indicator button")
+                .addEventListener("click", () => {
+                    currentQuestion++;
+                    if (currentQuestion >= questions.length) {
+                        currentQuestion--;
+                    }
+                    updateQuestion(questions[currentQuestion]);
+                });
+            document
+                .querySelector(".question-set > button")
+                .addEventListener("click", () => {
+                    currentQuestion = parseInt(
+                        document.querySelector(".question-set input").value - 1
+                    );
+                    updateQuestion(questions[currentQuestion]);
+                });
+
+            window.onload = () => {
+                currentQuestion = 0;
+                setTimeout(
+                    () => updateQuestion(questions[currentQuestion]),
+                    500
+                );
+            };
+        </script>
+    </body>
+</html>
