@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Feud questions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+    <script>
+        const questions = [
+                {
+                    question: "Test question.",
+                    answers: [
+                        ["A", 5],
+                        ["B", 4],
+                        ["C", 3],
+                        ["D", 2],
+                        ["E", 1],
+                    ]
+                },
+                {
+                    question: "Name a color that best represents OSA.",
+                    answers: [
+                        ["Maroon", 39],
+                        ["Green", 31],
+                        ["Gold", 14],
+                        ["Yellow", 9],
+                        ["Bricks", 4],
+                        ["Black", 2],
+                        ["Red", 1],
+                    ]
+                },
+                {
+                    question: "What is something OSA students like doing?",
+                    answers: [
+                        ["Procrastinating", 39],
+                        ["Studying / Doing Homework", 15],
+                        ["Crying", 14],
+                        ["Going on Whyte", 12],
+                        ["Gaming", 11],
+                        ["Sleeping", 9],
+                    ]
+                },
+                {
+                    question: "What is a typical OSA student most likely to dress up as for Halloween?",
+                    answers: [
+                        ["Not dress up", 47],
+                        ["A Teacher", 23],
+                        ["A Ghost", 16],
+                        ["A Calculator", 9],
+                        ["A Textbook", 5],
+                    ]
+                },
+                {
+                    question: "Which part of OSA is the most damaged?",
+                    answers: [
+                        ["The Students", 39],
+                        ["The Washrooms", 30],
+                        ["The Roof", 15],
+                        ["The Walls", 11],
+                        ["The Tables in the lounge", 5],
+                    ]
+                },
+                {
+                    question: "Name something OSA students do during their spares",
+                    answers: [
+                        ["Procrastinate", 30],
+                        ["Go on Whyte", 19],
+                        ["Study", 14],
+                        ["Leave", 12],
+                        ["Cry", 11],
+                        ["Play Games", 8],
+                        ["Sleep", 6],
+                    ]
+                },
+                {
+                    question: "What is the best month of the school year?",
+                    answers: [
+                        ["September", 31],
+                        ["December", 29],
+                        ["June", 22],
+                        ["October", 12],
+                        ["January", 6],
+                    ],
+                },
+                {
+                    question: "Which assignment is the hardest to forget at OSA?",
+                    answers: [
+                        ["Peters' Essays", 33],
+                        ["Mr Lee Tests", 27],
+                        ["Unit Tests", 17],
+                        ["Chem Labs", 12],
+                        ["Orals", 4],
+                        ["Kosowan Worksheets", 4],
+                        ["Quizzes", 3],
+                    ]
+                },
+                {
+                    question: "Mr.Lee gives you a pop quiz that you're not prepared for, what do you do?",
+                    answers: [
+                        ["Do my best to answer it", 37],
+                        ["Write down random answers", 22],
+                        ["Cry", 17],
+                        ["Pretend to write it", 15],
+                        ["Not do it", 6],
+                        ["Hand in an empty copy", 3],
+                    ]
+                },
+                {
+                    question: "If you had to hide from a monster at OSA, where would you hide?",
+                    answers: [
+                        ["Leave", 26],
+                        ["Backstage [audi]", 17],
+                        ["Inside Lockers", 16],
+                        ["Tech Booth", 9],
+                        ["Furnace Room", 9],
+                        ["Mr Lee's Class", 8],
+                        ["In plain sight", 8],
+                        ["Make out hall", 7],
+                    ]
+                },
+                {
+                    question: "What is the best shop on Whyte Ave?",
+                    answers: [
+                        ["Teapsy", 23],
+                        ["Quickly", 18],
+                        ["Mike's Famous", 17],
+                        ["Tim Hortons", 16],
+                        ["Yelo'd", 11],
+                        ["Remedy", 9],
+                        ["7/11", 6],
+                    ]
+                },
+                {
+                    question: "What is the worst classroom to be in at OSA?",
+                    answers: [
+                        ["Storage Room", 17],
+                        ["Mme. Liles' Room", 17],
+                        ["Kosowan's Room", 17],
+                        ["Mr. Peters' Room", 14],
+                        ["Auditorium", 11],
+                        ["Mr. Ye's Room", 8],
+                        ["Mr. Lee's Room", 8],
+                        ["Ms. Moan's Room", 8],
+                    ]
+                },
+                {
+                    question: "If all the bathrooms at OSA were closed and you really had to go, where would you do it? [No going outside]",
+                    answers: [
+                        ["In the chem lab, then neutralize with chemicals", 27],
+                        ["Out the window", 17],
+                        ["Inside a jar", 14],
+                        ["Behind curtains in the Audi", 14],
+                        ["Sink, rinse after", 14],
+                        ["Makeout Hall", 8],
+                        ["Water fountain", 6],
+                    ]
+                },
+
+                {
+                    question: "Name a Halloween prank.",
+                    answers: [
+                        ["Toilet papering houses/trees/yard", 51],
+                        ["Egging", 20],
+                        ["Soaping windows", 10],
+                        ["Smashing pumpkins", 07],
+                        ["Jumping out and scaring people", 07],
+                        ["Ringing doorbells and running away", 05],
+                    ],
+                },
+                {
+                    question: "Name a popular Halloween party decoration.",
+                    answers: [
+                        ["Pumpkin/Jack-O-Lantern", 36],
+                        ["Spiderwebs/Cobwebs", 20],
+                        ["Spiders", 14],
+                        ["Ghosts", 11],
+                        ["Skeletons", 10],
+                        ["Candles", 04],
+                    ],
+                },
+                {
+                    question:
+                        "Name something that makes a haunted house scary.",
+                    answers: [
+                        ["Scary music/noises", 40],
+                        ["Darkness", 17],
+                        ["Cobwebs/Spiderwebs", 15],
+                        ["Ghosts", 10],
+                        ["People/Things jumping out at you", 06],
+                        ["Strobe Lighting", 04],
+                    ],
+                },
+                {
+                    question: "Name a scary Halloween sound effect.",
+                    answers: [
+                        ["Screams", 38],
+                        ["Boo", 20],
+                        ["Creaking door", 17],
+                        ["Spooky laugh", 10],
+                        ["Moaning", 08],
+                        ["Howling", 07],
+                    ],
+                },
+                {
+                    question:
+                        "Name something people decorate their yards with at Halloween.",
+                    answers: [
+                        ["Gravestones/Tombstones", 38],
+                        ["Pumpkins", 31],
+                        ["Cobwebs/Spiderwebs", 12],
+                        ["Hay/Straw Bales", 05],
+                        ["Ghosts", 04],
+                        ["Lights", 04],
+                    ],
+                },
+                {
+                    question: "Name a scary Halloween character.",
+                    answers: [
+                        ["Freddie Krueger", 20],
+                        ["Frankenstein", 19],
+                        ["Jason (Friday the 13th)", 14],
+                        ["Vampire", 09],
+                        ["Dracula", 08],
+                        ["Grim Reaper", 07],
+                    ],
+                },
+                {
+                    question:
+                        "What other name is Halloween sometimes known as?",
+                    answers: [
+                        ["All Hallows Eve", 70],
+                        ["All Saints Day/Eve", 13],
+                        ["Trick or Treat Night", 07],
+                        ["Devil's Night", 05],
+                        ["Witches Night", 05],
+                    ],
+                },
+
+                {
+                    question: "What's the worst kind of candy to get while trick or treating?",
+                    answers: [
+                        ["Candy Corn", 36],
+                        ["Licorice", 16],
+                        ["Tootsie roll", 13],
+                        ["Raisins", 10],
+                        ["Apple/Fruit", 8],
+                        ["Almond/Nuts", 7],
+                        ["Gum", 5],
+                        ["Toothbrush", 5],
+                    ]
+                },
+                {
+                    question: "Other than Halloween, what's another reason you might wear a costume?",
+                    answers: [
+                        ["Costume Party", 26],
+                        ["Costume Party", 23],
+                        ["Acting", 15],
+                        ["Cosplay", 14],
+                        ["Convention", 13],
+                        ["D&D/larp", 9],
+                    ]
+                },
+                {
+                    question: "What flavour of Jelly bean do you avoid eating?",
+                    answers: [
+                        ["Black Licorice", 51],
+                        ["All are bad", 16],
+                        ["Buttered Popcorrn", 16],
+                        ["All are good", 6],
+                        ["Lemon", 6],
+                        ["Grrape", 5],
+                    ]
+                },
+                {
+                    question: "Name a mean prank kids pull on Halloween",
+                    answers: [
+                        ["Toilet Paper House", 47],
+                        ["Egging cars", 37],
+                        ["Smashing pumpkins", 6],
+                        ["Ding dong Dash", 4],
+                        ["Stealing Candy", 4],
+                        ["Jump Scare", 3],
+                    ]
+                },
+                {
+                    question: "What's the best movie or movie series to watch during Halloween?",
+                    answers: [
+                        ["Nightmare Before Christmas", 28],
+                        ["Halloween", 24],
+                        ["Hocus Pocus", 24],
+                        ["HalloweenTown", 13],
+                        ["Scream", 7],
+                        ["Saw", 5],
+                    ]
+                },
+                {
+                    question: "Name something you hope is fake at a Halloween Party because you would be afraid of the rea one?",
+                    answers: [
+                        ["Spider", 50],
+                        ["Skeleton", 13],
+                        ["Body Parts", 10],
+                        ["Corpse", 9],
+                        ["Zombie", 9],
+                        ["Blood", 9],
+                    ]
+                },
+                {
+                    question: "Name something pumpkin flavored",
+                    answers: [
+                        ["Pie", 44],
+                        ["Coffee", 39],
+                        ["Bread", 7],
+                        ["Muffin", 5],
+                        ["Cake", 3],
+                        ["Pie", 2],
+                    ]
+                },
+                {
+                    question: "Other than trick or treating, name one thing you do to celebate Halloween?",
+                    answers: [
+                        ["Decoate", 28],
+                        ["Halloween party", 26],
+                        ["Pumpkin Carving", 15],
+                        ["Dress up", 13],
+                        ["Cook Food", 9],
+                        ["Watch a Movie", 6],
+                    ]
+                },
+                {
+                    question: "Name a popular candy people give out for Halloween",
+                    answers: [
+                        ["Snickers", 35],
+                        ["Reese's Peanut Butter Cups", 19],
+                        ["M&M", 13],
+                        ["Hershey's", 12],
+                        ["Kit Kat", 8],
+                        ["Candy Corn", 7],
+                    ]
+                },
+                {
+                    question: "Name a popular Halloween Song",
+                    answers: [
+                        ["Monster Mash", 66],
+                        ["Thriller", 14],
+                        ["I Put a Spell on You", 6],
+                        ["This is Halloween", 5],
+                        ["Ghost Busters", 4],
+                        ["Five Little Pumpkins", 3],
+                    ]
+                },
+                {
+                    question: "What time do most children start trick or treating on Halloween night?",
+                    answers: [
+                        ["6pm", 54],
+                        ["5pm", 21],
+                        ["7pm", 12],
+                        ["Dusk", 8],
+                        ["6 30pm", 8],
+                    ]
+                },
+                {
+                    question: "Name a popular female movie-inspired costume.",
+                    answers: [
+                        ["Wonder Woman", 20],
+                        ["Cat Woman", 15],
+                        ["Cinderella", 12],
+                        ["Marilyn Monroe", 10],
+                        ["Dorothy", 7],
+                        ["Alice from Alice in Wonderland", 5],
+                    ]
+                },
+                {
+                    question: "Name a popular Halloween party decoration.",
+                    answers: [
+                        ["Pumpkin/Jacko Lanturn", 36],
+                        ["Spiderwebs/Cobwebs", 20],
+                        ["Spiders", 14],
+                        ["Ghosts", 11],
+                        ["Skeletons", 10],
+                        ["Candles", 4],
+                    ]
+                },
+                {
+                    question: "Name a game you might play at a Halloween party.",
+                    answers: [
+                        ["Bobbing for Apples", 82],
+                        ["Hide and Seek", 7],
+                        ["Scavenger Hunt", 7],
+                        ["Costume Contest", 3],
+                    ]
+                },
+                {
+                    question: "Name a scary Halloween character.",
+                    answers: [
+                        ["Freddie Krugger", 20],
+                        ["Frankenstein", 19],
+                        ["Jason (Friday the 13th)", 14],
+                        ["Vampire", 9],
+                        ["Dracula", 8],
+                        ["Grim Reaper", 7],
+                    ]
+                },
+                {
+                    question: "What other name is Halloween sometimes known as?",
+                    answers: [
+                        ["All Hallows Eve", 70],
+                        ["All Saints Day/Eve", 13],
+                        ["Trick or Treat Night", 7],
+                        ["Devil's Night", 5],
+                        ["Witches Night", 5],
+                    ]
+                },
+                {
+                    question: "Name a scary Halloween sound effect.",
+                    answers: [
+                        ["Screams", 38],
+                        ["Boos", 20],
+                        ["Creaking Door", 17],
+                        ["Spooky Laugh", 10],
+                        ["Moaning", 8],
+                        ["Howling", 7],
+                    ]
+                },
+                {
+                    question: "Name something people wear to scare off evil spirits.",
+                    answers: [
+                        ["Garlic", 65],
+                        ["Cross/Crucifix", 30],
+                        ["Crystals", 3],
+                        ["Masks", 2],
+                    ]
+                },
+                {
+                    question: "Name a popular Halloween cookie cutter shape.",
+                    answers: [
+                        ["Pumpkin", 60],
+                        ["Ghost", 22],
+                        ["Bat", 13],
+                        ["Cat", 5],
+                    ]
+                },
+                {
+                    question: "Name an accessory essential to a witch's costume.",
+                    answers: [
+                        ["Broom", 50],
+                        ["Black hat", 48],
+                        ["Pointed Nose", 2],
+                    ]
+                },
+            ]
+    </script>
+    <template id="question">
+        <div class="question">
+            <h3 class="question-title"></h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Answer</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </template>
+    <div id="question-container"></div>
+    <script>
+        const questionTemplate = document.getElementById("question");
+        const questionContainer = document.getElementById("question-container");
+        questions.forEach((question, qid) => {
+            const questionElement = questionTemplate.content.cloneNode(true);
+            questionElement.querySelector(".question-title").innerText = `${qid + 1}. ${question.question}`;
+            const tbody = questionElement.querySelector("tbody");
+            question.answers.forEach(answer => {
+                const tr = document.createElement("tr");
+                const td1 = document.createElement("td");
+                td1.innerText = answer[0];
+                const td2 = document.createElement("td");
+                td2.innerText = answer[1];
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tbody.appendChild(tr);
+            });
+            questionContainer.appendChild(questionElement);
+        });
+    </script>
+    <style>
+        body {
+            width: 80ch;
+        }
+        .question {
+            margin-bottom: 2rem;
+        }
+    </style>
+    <script>
+        // append questions in this order 15 20 4 40 3 30 14 7 22 34 16 17 5 27 29 39 11 25 28 10 26 6 2 38
+        // 1 indexed
+        const order = [15, 20, 4, 40, 3, 30, 14, 7, 22, 34, 16, 17, 5, 27, 29, 39, 11, 25, 28, 10, 26, 6, 2, 38];
+        const arr = [];
+        for (const num of order) {
+            arr.push(questions[num - 1]);
+        }
+        console.log(JSON.stringify(arr, null, 4));
+    </script>
+</body>
+</html>
