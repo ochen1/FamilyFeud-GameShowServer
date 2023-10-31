@@ -7,6 +7,20 @@
         <title>Family Feud System</title>
     </head>
     <body>
+        <div style="display: none;">
+            <audio controls>
+                <source src="assets/buzzer.mp3" type="audio/mpeg" />
+            </audio>
+            <span>Correct</span>
+            <audio controls>
+                <source src="assets/correct.mp3" type="audio/mpeg" />
+            </audio>
+            <span>Wrong</span>
+            <audio controls>
+                <source src="assets/wrong.mp3" type="audio/mpeg" />
+            </audio>
+        </div>
+        <img src="https://osasu.tech/wp-content/uploads/2023/10/SU_geometric_cropped_square.png" alt="" style="position: absolute; width: 64px; left: 50%; transform: translateX(-50%); top: 2.5vh; filter: brightness(4) contrast(4) drop-shadow(0 0 20px rgb(242 144 65)) drop-shadow(0 0 20px rgb(242 144 65));">
         <div class="row-1">
             <div class="point-counter">00</div>
             <h1>TRICK OR TRIVIA</h1>
@@ -336,6 +350,8 @@
                 if (window.clearStrikeTimeout) {
                     clearTimeout(window.clearStrikeTimeout);
                 }
+                document.querySelectorAll("audio")[2].currentTime = 0;
+                document.querySelectorAll("audio")[2].play();
                 window.clearStrikeTimeout = setTimeout(() => {
                     strike.classList.add("hidden");
                     window.clearStrikeTimeout = null;
@@ -351,13 +367,18 @@
                 const card = document.querySelectorAll(".answer")[n - 1];
                 if (status) {
                     card.classList.add("flipped");
+                    document.querySelectorAll("audio")[1].currentTime = 0;
+                    document.querySelectorAll("audio")[1].volume = 0.35;
+                    document.querySelectorAll("audio")[1].play();
                 } else {
                     card.classList.remove("flipped");
                 }
             }
 
             const socket = new WebSocket(
-                "ws://" + window.location.host + "/ws"
+                window.location.protocol === "https:"
+                    ? "wss://" + window.location.host + "/ws"
+                    : "ws://" + window.location.host + "/ws"
             );
             socket.onmessage = function (event) {
                 const data = JSON.parse(event.data);
@@ -397,6 +418,14 @@
                         });
                 }
             };
+            // heartbeat every 60 seconds for CloudFlare
+            setInterval(() => {
+                socket.send(
+                    JSON.stringify({
+                        type: "heartbeat",
+                    })
+                );
+            }, 60000);
         </script>
     </body>
 </html>
