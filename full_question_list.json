@@ -1,0 +1,662 @@
+[
+    {
+        "question": "Name a popular Halloween party decoration.",
+        "answers": [
+            [
+                "Pumpkin / Jack-O-Lantern",
+                36
+            ],
+            [
+                "Spiderwebs / Cobwebs",
+                20
+            ],
+            [
+                "Spiders",
+                14
+            ],
+            [
+                "Ghosts",
+                11
+            ],
+            [
+                "Skeletons",
+                10
+            ],
+            [
+                "Candles",
+                4
+            ]
+        ]
+    },
+    {
+        "question": "What other name is Halloween sometimes known as?",
+        "answers": [
+            [
+                "All Hallows Eve",
+                70
+            ],
+            [
+                "All Saints Day / Eve",
+                13
+            ],
+            [
+                "Trick or Treat Night",
+                7
+            ],
+            [
+                "Devil's Night",
+                5
+            ],
+            [
+                "Witches Night",
+                5
+            ]
+        ]
+    },
+    {
+        "question": "What is a typical OSA student most likely to dress up as for Halloween?",
+        "answers": [
+            [
+                "Not dress up",
+                47
+            ],
+            [
+                "A Teacher",
+                23
+            ],
+            [
+                "A Ghost",
+                16
+            ],
+            [
+                "A Calculator",
+                9
+            ],
+            [
+                "A Textbook",
+                5
+            ]
+        ]
+    },
+    {
+        "question": "Name an accessory essential to a witch's costume.",
+        "answers": [
+            [
+                "Broom",
+                50
+            ],
+            [
+                "Black hat",
+                48
+            ],
+            [
+                "Pointed Nose",
+                2
+            ]
+        ]
+    },
+    {
+        "question": "What is something OSA students like doing?",
+        "answers": [
+            [
+                "Procrastinating",
+                39
+            ],
+            [
+                "Studying / Doing Homework",
+                15
+            ],
+            [
+                "Crying",
+                14
+            ],
+            [
+                "Going on Whyte",
+                12
+            ],
+            [
+                "Gaming",
+                11
+            ],
+            [
+                "Sleeping",
+                9
+            ]
+        ]
+    },
+    {
+        "question": "Name a popular Halloween Song",
+        "answers": [
+            [
+                "Monster Mash",
+                66
+            ],
+            [
+                "Thriller",
+                14
+            ],
+            [
+                "I Put a Spell on You",
+                6
+            ],
+            [
+                "This is Halloween",
+                5
+            ],
+            [
+                "Ghost Busters",
+                4
+            ],
+            [
+                "Five Little Pumpkins",
+                3
+            ]
+        ]
+    },
+    {
+        "question": "Name a Halloween prank.",
+        "answers": [
+            [
+                "Toilet papering houses / trees / yard",
+                51
+            ],
+            [
+                "Egging",
+                20
+            ],
+            [
+                "Soaping windows",
+                10
+            ],
+            [
+                "Smashing pumpkins",
+                7
+            ],
+            [
+                "Jumping out and scaring people",
+                7
+            ],
+            [
+                "Ringing doorbells and running away",
+                5
+            ]
+        ]
+    },
+    {
+        "question": "What is the best month of the school year?",
+        "answers": [
+            [
+                "September",
+                31
+            ],
+            [
+                "December",
+                29
+            ],
+            [
+                "June",
+                22
+            ],
+            [
+                "October",
+                12
+            ],
+            [
+                "January",
+                6
+            ]
+        ]
+    },
+    {
+        "question": "Other than Halloween, what's another reason you might wear a costume?",
+        "answers": [
+            [
+                "Costume Party",
+                49
+            ],
+            [
+                "Acting",
+                15
+            ],
+            [
+                "Cosplay",
+                14
+            ],
+            [
+                "Convention",
+                13
+            ],
+            [
+                "D&D / larp",
+                9
+            ]
+        ]
+    },
+    {
+        "question": "Name a game you might play at a Halloween party.",
+        "answers": [
+            [
+                "Bobbing for Apples",
+                82
+            ],
+            [
+                "Hide and Seek",
+                7
+            ],
+            [
+                "Scavenger Hunt",
+                7
+            ],
+            [
+                "Costume Contest",
+                3
+            ]
+        ]
+    },
+    {
+        "question": "Name something that makes a haunted house scary.",
+        "answers": [
+            [
+                "Scary music / noises",
+                40
+            ],
+            [
+                "Darkness",
+                17
+            ],
+            [
+                "Cobwebs / Spiderwebs",
+                15
+            ],
+            [
+                "Ghosts",
+                10
+            ],
+            [
+                "People / Things jumping out at you",
+                6
+            ],
+            [
+                "Strobe Lighting",
+                4
+            ]
+        ]
+    },
+    {
+        "question": "Name a scary Halloween sound effect.",
+        "answers": [
+            [
+                "Screams",
+                38
+            ],
+            [
+                "Boo",
+                20
+            ],
+            [
+                "Creaking door",
+                17
+            ],
+            [
+                "Spooky laugh",
+                10
+            ],
+            [
+                "Moaning",
+                8
+            ],
+            [
+                "Howling",
+                7
+            ]
+        ]
+    },
+    {
+        "question": "Which part of OSA is the most damaged?",
+        "answers": [
+            [
+                "The Students",
+                39
+            ],
+            [
+                "The Washrooms",
+                30
+            ],
+            [
+                "The Roof",
+                15
+            ],
+            [
+                "The Walls",
+                11
+            ],
+            [
+                "The Tables in the lounge",
+                5
+            ]
+        ]
+    },
+    {
+        "question": "Name something pumpkin flavored",
+        "answers": [
+            [
+                "Pie",
+                44
+            ],
+            [
+                "Coffee",
+                39
+            ],
+            [
+                "Bread",
+                7
+            ],
+            [
+                "Muffin",
+                5
+            ],
+            [
+                "Cake",
+                3
+            ],
+            [
+                "Pie",
+                2
+            ]
+        ]
+    },
+    {
+        "question": "Name a popular candy people give out for Halloween",
+        "answers": [
+            [
+                "Snickers",
+                35
+            ],
+            [
+                "Reese's Peanut Butter Cups",
+                19
+            ],
+            [
+                "M&M",
+                13
+            ],
+            [
+                "Hershey's",
+                12
+            ],
+            [
+                "Kit Kat",
+                8
+            ],
+            [
+                "Candy Corn",
+                7
+            ]
+        ]
+    },
+    {
+        "question": "Name a popular Halloween cookie cutter shape.",
+        "answers": [
+            [
+                "Pumpkin",
+                60
+            ],
+            [
+                "Ghost",
+                22
+            ],
+            [
+                "Bat",
+                13
+            ],
+            [
+                "Cat",
+                5
+            ]
+        ]
+    },
+    {
+        "question": "What is the best shop on Whyte Ave?",
+        "answers": [
+            [
+                "Teapsy",
+                23
+            ],
+            [
+                "Quickly",
+                18
+            ],
+            [
+                "Mike's Famous",
+                17
+            ],
+            [
+                "Tim Hortons",
+                16
+            ],
+            [
+                "Yelo'd",
+                11
+            ],
+            [
+                "Remedy",
+                9
+            ],
+            [
+                "7 / 11",
+                6
+            ]
+        ]
+    },
+    {
+        "question": "What's the best movie or movie series to watch during Halloween?",
+        "answers": [
+            [
+                "Nightmare Before Christmas",
+                28
+            ],
+            [
+                "Halloween",
+                24
+            ],
+            [
+                "Hocus Pocus",
+                24
+            ],
+            [
+                "HalloweenTown",
+                13
+            ],
+            [
+                "Scream",
+                7
+            ],
+            [
+                "Saw",
+                5
+            ]
+        ]
+    },
+    {
+        "question": "Other than trick or treating, name one thing you do to celebate Halloween?",
+        "answers": [
+            [
+                "Decoate",
+                28
+            ],
+            [
+                "Halloween party",
+                26
+            ],
+            [
+                "Pumpkin Carving",
+                15
+            ],
+            [
+                "Dress up",
+                13
+            ],
+            [
+                "Cook Food",
+                9
+            ],
+            [
+                "Watch a Movie",
+                6
+            ]
+        ]
+    },
+    {
+        "question": "If you had to hide from a monster at OSA, where would you hide?",
+        "answers": [
+            [
+                "Leave",
+                26
+            ],
+            [
+                "Backstage [audi]",
+                17
+            ],
+            [
+                "Inside Lockers",
+                16
+            ],
+            [
+                "Tech Booth",
+                9
+            ],
+            [
+                "Furnace Room",
+                9
+            ],
+            [
+                "Mr Lee's Class",
+                8
+            ],
+            [
+                "In plain sight",
+                8
+            ],
+            [
+                "Make out hall",
+                7
+            ]
+        ]
+    },
+    {
+        "question": "Name something you hope is fake at a Halloween Party because you would be afraid of the rea one?",
+        "answers": [
+            [
+                "Spider",
+                50
+            ],
+            [
+                "Skeleton",
+                13
+            ],
+            [
+                "Body Parts",
+                10
+            ],
+            [
+                "Corpse",
+                9
+            ],
+            [
+                "Zombie",
+                9
+            ],
+            [
+                "Blood",
+                9
+            ]
+        ]
+    },
+    {
+        "question": "Name something OSA students do during their spares",
+        "answers": [
+            [
+                "Procrastinate",
+                30
+            ],
+            [
+                "Go on Whyte",
+                19
+            ],
+            [
+                "Study",
+                14
+            ],
+            [
+                "Leave",
+                12
+            ],
+            [
+                "Cry",
+                11
+            ],
+            [
+                "Play Games",
+                8
+            ],
+            [
+                "Sleep",
+                6
+            ]
+        ]
+    },
+    {
+        "question": "Name a color that best represents OSA.",
+        "answers": [
+            [
+                "Maroon",
+                39
+            ],
+            [
+                "Green",
+                31
+            ],
+            [
+                "Gold",
+                14
+            ],
+            [
+                "Yellow",
+                9
+            ],
+            [
+                "Bricks",
+                4
+            ],
+            [
+                "Black",
+                2
+            ],
+            [
+                "Red",
+                1
+            ]
+        ]
+    },
+    {
+        "question": "Name something people wear to scare off evil spirits.",
+        "answers": [
+            [
+                "Garlic",
+                65
+            ],
+            [
+                "Cross / Crucifix",
+                30
+            ],
+            [
+                "Crystals",
+                3
+            ],
+            [
+                "Masks",
+                2
+            ]
+        ]
+    }
+]
